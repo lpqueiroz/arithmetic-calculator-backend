@@ -1,0 +1,13 @@
+# Api Routes
+
+POST    /arithmetic-calculation/basic           controllers.ArithmeticCalculator.ArithmeticCalculatorController.performBasicCalculation()
+
+POST    /arithmetic-calculation/square-root     controllers.ArithmeticCalculator.ArithmeticCalculatorController.performSquareRootCalculation()
+
+POST    /token                                  controllers.Auth.AuthController.login()
+
+GET     /records                                controllers.Record.RecordController.listRecordsByUser(skip: Option[Int], limit: Option[Int])
+
+GET     /random-string                          controllers.ArithmeticCalculator.ArithmeticCalculatorController.performRandomStringCalculation()
+
+DELETE  /records/:id                            controllers.Record.RecordController.deleteRecord(id: Long)

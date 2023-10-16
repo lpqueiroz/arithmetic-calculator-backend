@@ -1,0 +1,27 @@
+version: '3'
+services:
+  play-app:
+    build: .
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql
+    environment:
+      - DB_URL=jdbc:mysql://mysql:3306/arithmetic_calculator
+      - DB_USER=root
+      - DB_PASSWORD=root
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.1.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: arithmetic_calculator
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+networks:
+  app-network:
